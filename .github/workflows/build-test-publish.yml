@@ -4,10 +4,6 @@ name: Build, test and publish
 
 on:
   push:
-    branches:
-      - master
-      - release
-      - version/*
   pull_request:
     branches-ignore:
       - l10n_master
@@ -121,6 +117,7 @@ jobs:
             mingw-w64-${{ matrix.arch }}-python-yarl
             mingw-w64-${{ matrix.arch }}-python-aiohttp
             mingw-w64-${{ matrix.arch }}-gmp
+            mingw-w64-${{ matrix.arch }}-gcc
       - name: Checkout
         uses: actions/checkout@v3
       - name: Rewrite version for dev if not tag
